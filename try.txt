@@ -1,0 +1,146 @@
+BOTH VMs — Common Setup
+bash# run on VM1 and VM2 both
+
+# disable swap (required for K8s)
+sudo swapoff -a
+sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+
+# load kernel modules
+cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+overlay
+br_netfilter
+EOF
+sudo modprobe overlay
+sudo modprobe br_netfilter
+
+# sysctl settings
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+EOF
+sudo sysctl --system
+
+# install containerd
+sudo apt update
+sudo apt install -y containerd
+sudo mkdir -p /etc/containerd
+containerd config default | sudo tee /etc/containerd/config.toml
+sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
+sudo systemctl restart containerd
+sudo systemctl enable containerd
+
+# install kubeadm kubelet kubectl
+sudo apt update
+sudo apt install -y apt-transport-https ca-certificates curl gpg
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | \
+  sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | \
+  sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt update
+sudo apt install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+
+VM1 — Management Cluster Setup
+bash# initialize cluster
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+
+# setup kubectl
+mkdir -p $HOME/.kube
+sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+# allow pods on master (single node cluster)
+kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+
+# install Flannel CNI (networking)
+kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+
+# verify
+kubectl get nodes
+# should show Ready
+
+# install ArgoCD
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+# wait for ArgoCD pods to start
+kubectl get pods -n argocd -w
+
+# expose ArgoCD UI (NodePort so you can access from browser)
+kubectl patch svc argocd-server -n argocd \
+  -p '{"spec": {"type": "NodePort"}}'
+
+# get ArgoCD NodePort
+kubectl get svc argocd-server -n argocd
+# note the port — access at http://VM1-IP:<nodeport>
+
+# get initial ArgoCD admin password
+kubectl get secret argocd-initial-admin-secret \
+  -n argocd \
+  -o jsonpath="{.data.password}" | base64 -d
+# username: admin
+# password: above output
+
+# install ArgoCD CLI
+curl -sSL -o argocd-linux-amd64 \
+  https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+
+# login to ArgoCD via CLI
+argocd login localhost:<nodeport> \
+  --username admin \
+  --password <password> \
+  --insecure
+
+VM2 — Workload Cluster Setup
+bash# initialize cluster (different pod CIDR to avoid conflict)
+sudo kubeadm init --pod-network-cidr=10.245.0.0/16
+
+# setup kubectl
+mkdir -p $HOME/.kube
+sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+# allow pods on master
+kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+
+# install Flannel CNI
+kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+
+# verify
+kubectl get nodes
+
+# create production namespace
+kubectl create namespace production
+
+# copy kubeconfig to your laptop or VM1
+# you need this to register VM2 in ArgoCD
+cat $HOME/.kube/config
+# copy this output — you need it in next step
+
+VM1 — Register VM2 Cluster in ArgoCD
+bash# on VM1 — copy VM2 kubeconfig
+# create a file with VM2's kubeconfig content
+nano vm2-kubeconfig.yaml
+# paste VM2 kubeconfig content here
+# IMPORTANT — change server IP to VM2's actual IP
+# find line: server: https://127.0.0.1:6443
+# change to: server: https://<VM2-IP>:6443
+
+# set KUBECONFIG to point to VM2
+export KUBECONFIG=./vm2-kubeconfig.yaml
+
+# verify you can reach VM2 from VM1
+kubectl get nodes
+
+# register VM2 cluster in ArgoCD
+argocd cluster add kubernetes-admin@kubernetes \
+  --name workload-cluster \
+  --insecure
+
+# verify cluster added
+argocd cluster list
+
+# reset KUBECONFIG back to VM1
+export KUBECONFIG=$HOME/.kube/config

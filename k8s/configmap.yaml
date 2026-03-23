@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: production
+data:
+  NODE_ENV: "production"
+  MONGO_HOST: "mongodb-svc"
+  MONGO_PORT: "27017"
+  MONGO_DB: "merndb"
+  BACKEND_URL: "http://backend-svc:5000"

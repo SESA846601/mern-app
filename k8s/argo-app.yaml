@@ -1,0 +1,26 @@
+#argocd-app.yaml (Deploy on VM1)
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mern-app
+  namespace: argocd
+spec:
+  project: default
+
+  # where to get the manifests from
+  source:
+    repoURL: https://github.com/yourusername/your-repo
+    targetRevision: main
+    path: k8s                          # folder ArgoCD watches
+
+  # where to deploy to
+  destination:
+    server: https://<VM2-IP>:6443      # VM2 workload cluster
+    namespace: production
+
+  syncPolicy:
+    automated:
+      prune: true                      # delete removed resources
+      selfHeal: true                   # fix manual changes automatically
+    syncOptions:
+    - CreateNamespace=true

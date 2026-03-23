@@ -9,13 +9,13 @@ spec:
 
   # where to get the manifests from
   source:
-    repoURL: https://github.com/yourusername/your-repo
+    repoURL: https://github.com/SESA846601/mern-app
     targetRevision: main
     path: k8s                          # folder ArgoCD watches
 
   # where to deploy to
   destination:
-    server: https://<VM2-IP>:6443      # VM2 workload cluster
+    server: https://192.168.78.130:6443      # VM2 workload cluster
     namespace: production
 
   syncPolicy:

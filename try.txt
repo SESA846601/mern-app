@@ -263,7 +263,7 @@ Step 1 — Expose ArgoCD as NodePort:
 kubectl patch svc argocd-server -n argocd \
   -p '{"spec": {"type": "NodePort"}}'
 
-  
+
 Step 2 — Get the port number:
 
 
@@ -318,18 +318,36 @@ Username is admin, password is the output of Step 3.
 
 
 
-sesa846601@vm2:~$ kubectl get nodes
-E0324 11:20:50.962125   70627 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
-E0324 11:20:50.962411   70627 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
-E0324 11:20:50.963658   70627 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
-E0324 11:20:50.963804   70627 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
-E0324 11:20:50.965115   70627 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
-The connection to the server 192.168.78.130:6443 was refused - did you specify the right host or port?
-sesa846601@vm2:~$ kubectl get pods -n kube-system
-E0324 11:21:43.252712   71032 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
-E0324 11:21:43.253098   71032 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
-E0324 11:21:43.254865   71032 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
-E0324 11:21:43.255697   71032 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
-E0324 11:21:43.257119   71032 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
-The connection to the server 192.168.78.130:6443 was refused - did you specify the right host or port?
-sesa846601@vm2:~$ 
+sStep 1 — Reset first:
+sudo kubeadm reset -f
+sudo rm -rf /etc/cni/net.d
+sudo rm -rf $HOME/.kube
+sudo rm -rf /var/lib/etcd
+sudo rm -rf /var/lib/kubelet
+
+
+Step 2 — Restart services:
+sudo systemctl restart containerd
+sudo systemctl restart kubelet
+
+
+Step 3 — Init VM2 cluster:
+sudo kubeadm init --pod-network-cidr=10.245.0.0/16
+
+
+Step 4 — Setup kubectl:
+mkdir -p $HOME/.kube
+sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+
+Step 5 — Remove taint:
+kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+
+
+Step 6 — Install Flannel:
+kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+
+
+Step 7 — Check:
+kubectl get nodes

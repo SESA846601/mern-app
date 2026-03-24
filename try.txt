@@ -179,3 +179,23 @@ sudo systemctl restart kubelet
 
 Step 5 — Wait 10 seconds, then init again:
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+
+
+
+
+Step 1 — Setup kubectl:
+mkdir -p $HOME/.kube
+
+sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Step 2 — Allow pods on master node:
+kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+
+Step 3 — Install Flannel networking:
+
+kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+
+
+Step 4 — Check node is Ready:
+kubectl get nodes

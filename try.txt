@@ -243,3 +243,51 @@ argocd-repo-server-xxx                1/1     Running
 argocd-application-controller-xxx     1/1     Running   
 argocd-dex-server-xxx                 1/1     Running   
 argocd-redis-xxx                      1/1     Running
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Step 1 — Expose ArgoCD as NodePort:
+
+
+kubectl patch svc argocd-server -n argocd \
+  -p '{"spec": {"type": "NodePort"}}'
+
+  
+Step 2 — Get the port number:
+
+
+kubectl get svc argocd-server -n argocd
+
+
+Step 3 — Get admin password:
+
+kubectl get secret argocd-initial-admin-secret \
+  -n argocd \
+  -o jsonpath="{.data.password}" | base64 -d
+
+
+
+
+
+Paste the output of Step 2 and 3. 
+
+From Step 2 you'll see something like:
+
+NAME            TYPE       PORT(S)
+argocd-server   NodePort   80:31234/TCP, 443:31235/TCP
+
+
+Note that **second port number** (like 31235) — that's what you'll use to open ArgoCD in your browser at:
+https://192.168.78.128:<nodeport>
+Username is admin, password is the output of Step 3.

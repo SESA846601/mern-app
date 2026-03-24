@@ -376,3 +376,31 @@ sudo systemctl restart containerd
 sudo systemctl restart kubelet
 sleep 30
 kubectl get nodes
+
+
+
+Step 1 — Get ArgoCD NodePort:
+
+kubectl get svc argocd-server -n argocd
+
+Step 2 — Login to ArgoCD CLI:
+
+argocd login 192.168.78.128:<nodeport> \
+  --username admin \
+  --password <your-argocd-password> \
+  --insecure
+
+Step 3 — Register VM2 cluster in ArgoCD:
+
+KUBECONFIG=~/vm2-kubeconfig.yaml argocd cluster add kubernetes-admin@kubernetes \
+  --name workload-cluster \
+  --
+  
+Step 4 — Verify VM2 was added:
+
+argocd cluster list
+```
+
+Should show:
+SERVER                         NAME              
+https://192.168.78.130:6443    workload-cluster

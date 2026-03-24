@@ -291,3 +291,45 @@ argocd-server   NodePort   80:31234/TCP, 443:31235/TCP
 Note that **second port number** (like 31235) — that's what you'll use to open ArgoCD in your browser at:
 https://192.168.78.128:<nodeport>
 Username is admin, password is the output of Step 3.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sesa846601@vm2:~$ kubectl get nodes
+E0324 11:20:50.962125   70627 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
+E0324 11:20:50.962411   70627 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
+E0324 11:20:50.963658   70627 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
+E0324 11:20:50.963804   70627 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
+E0324 11:20:50.965115   70627 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
+The connection to the server 192.168.78.130:6443 was refused - did you specify the right host or port?
+sesa846601@vm2:~$ kubectl get pods -n kube-system
+E0324 11:21:43.252712   71032 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
+E0324 11:21:43.253098   71032 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
+E0324 11:21:43.254865   71032 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
+E0324 11:21:43.255697   71032 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
+E0324 11:21:43.257119   71032 memcache.go:265] couldn't get current server API group list: Get "https://192.168.78.130:6443/api?timeout=32s": dial tcp 192.168.78.130:6443: connect: connection refused
+The connection to the server 192.168.78.130:6443 was refused - did you specify the right host or port?
+sesa846601@vm2:~$ 

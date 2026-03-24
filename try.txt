@@ -351,3 +351,188 @@ kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Doc
 
 Step 7 — Check:
 kubectl get nodes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sesa846601@vm2:~$ sudo kubeadm reset -f
+sudo rm -rf /etc/cni/net.d
+sudo rm -rf $HOME/.kube
+sudo rm -rf /var/lib/etcd
+sudo rm -rf /var/lib/kubelet
+[sudo] password for sesa846601: 
+[reset] Reading configuration from the cluster...
+[reset] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+W0324 11:28:27.891499   73824 reset.go:124] [reset] Unable to fetch the kubeadm-config ConfigMap from cluster: failed to get config map: Get "https://192.168.78.130:6443/api/v1/namespaces/kube-system/configmaps/kubeadm-config?timeout=10s": dial tcp 192.168.78.130:6443: connect: connection refused
+[preflight] Running pre-flight checks
+W0324 11:28:27.891577   73824 removeetcdmember.go:106] [reset] No kubeadm config, using etcd pod spec to get data directory
+[reset] Deleted contents of the etcd data directory: /var/lib/etcd
+[reset] Stopping the kubelet service
+[reset] Unmounting mounted directories in "/var/lib/kubelet"
+[reset] Deleting contents of directories: [/etc/kubernetes/manifests /var/lib/kubelet /etc/kubernetes/pki]
+[reset] Deleting files: [/etc/kubernetes/admin.conf /etc/kubernetes/super-admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf]
+
+The reset process does not clean CNI configuration. To do so, you must remove /etc/cni/net.d
+
+The reset process does not reset or clean up iptables rules or IPVS tables.
+If you wish to reset iptables, you must do so manually by using the "iptables" command.
+
+If your cluster was setup to utilize IPVS, run ipvsadm --clear (or similar)
+to reset your system's IPVS tables.
+
+The reset process does not clean your kubeconfig files and you must remove them manually.
+Please, check the contents of the $HOME/.kube/config file.
+sesa846601@vm2:~$ sudo systemctl restart containerd
+sudo systemctl restart kubelet
+sesa846601@vm2:~$ sudo kubeadm init --pod-network-cidr=10.245.0.0/16
+I0324 11:28:43.724595   74269 version.go:256] remote version is much newer: v1.35.3; falling back to: stable-1.29
+[init] Using Kubernetes version: v1.29.15
+[preflight] Running pre-flight checks
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+W0324 11:28:44.170792   74269 checks.go:835] detected that the sandbox image "registry.k8s.io/pause:3.8" of the container runtime is inconsistent with that used by kubeadm. It is recommended that using "registry.k8s.io/pause:3.9" as the CRI sandbox image.
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local vm2] and IPs [10.96.0.1 192.168.78.130]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [localhost vm2] and IPs [192.168.78.130 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [localhost vm2] and IPs [192.168.78.130 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "super-admin.conf" kubeconfig file
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Starting the kubelet
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests". This can take up to 4m0s
+[apiclient] All control plane components are healthy after 4.506132 seconds
+[upload-config] Storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
+[kubelet] Creating a ConfigMap "kubelet-config" in namespace kube-system with the configuration for the kubelets in the cluster
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node vm2 as control-plane by adding the labels: [node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]
+[mark-control-plane] Marking the node vm2 as control-plane by adding the taints [node-role.kubernetes.io/control-plane:NoSchedule]
+[bootstrap-token] Using token: xeqxt2.lif0bq4smu84bf5c
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to get nodes
+[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[kubelet-finalize] Updating "/etc/kubernetes/kubelet.conf" to point to a rotatable kubelet client certificate and key
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 192.168.78.130:6443 --token xeqxt2.lif0bq4smu84bf5c \
+	--discovery-token-ca-cert-hash sha256:74d04534e2ace1d772d1da4e992b94fe0c413e915d5e8f14b41ff91cf72cc3b7 
+sesa846601@vm2:~$ mkdir -p $HOME/.kube
+sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+sesa846601@vm2:~$ kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+error: Get "https://192.168.78.130:6443/api/v1/nodes": dial tcp 192.168.78.130:6443: connect: connection refused - error from a previous attempt: http2: server sent GOAWAY and closed the connection; LastStreamID=5, ErrCode=NO_ERROR, debug=""
+sesa846601@vm2:~$ kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+node/vm2 untainted
+sesa846601@vm2:~$ mkdir -p $HOME/.kube
+sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+sesa846601@vm2:~$ kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+error: taint "node-role.kubernetes.io/control-plane" not found
+sesa846601@vm2:~$ kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+error: taint "node-role.kubernetes.io/control-plane" not found
+sesa846601@vm2:~$ kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+namespace/kube-flannel created
+clusterrole.rbac.authorization.k8s.io/flannel created
+clusterrolebinding.rbac.authorization.k8s.io/flannel created
+serviceaccount/flannel created
+configmap/kube-flannel-cfg created
+daemonset.apps/kube-flannel-ds created
+sesa846601@vm2:~$ kubectl get nodes
+NAME   STATUS     ROLES           AGE     VERSION
+vm2    NotReady   control-plane   5m17s   v1.29.15
+sesa846601@vm2:~$ kubectl get nodes
+NAME   STATUS     ROLES           AGE     VERSION
+vm2    NotReady   control-plane   5m20s   v1.29.15
+sesa846601@vm2:~$ kubectl get nodes
+NAME   STATUS     ROLES           AGE     VERSION
+vm2    NotReady   control-plane   5m24s   v1.29.15
+sesa846601@vm2:~$ kubectl get nodes
+NAME   STATUS     ROLES           AGE     VERSION
+vm2    NotReady   control-plane   5m25s   v1.29.15
+sesa846601@vm2:~$ kubectl get nodes
+NAME   STATUS     ROLES           AGE     VERSION
+vm2    NotReady   control-plane   5m27s   v1.29.15
+sesa846601@vm2:~$ 
+sesa846601@vm2:~$ 
+sesa846601@vm2:~$ 
+sesa846601@vm2:~$ kubectl get nodes
+NAME   STATUS     ROLES           AGE     VERSION
+vm2    NotReady   control-plane   5m28s   v1.29.15
+sesa846601@vm2:~$ kubectl get nodes
+NAME   STATUS     ROLES           AGE     VERSION
+vm2    NotReady   control-plane   5m44s   v1.29.15
+sesa846601@vm2:~$ kubectl get nodes
+NAME   STATUS     ROLES           AGE     VERSION
+vm2    NotReady   control-plane   5m45s   v1.29.15
+sesa846601@vm2:~$ kubectl get nodes
+
+^C
+sesa846601@vm2:~$ 
+sesa846601@vm2:~$ kubectl get nodes
+^[[A^C
+sesa846601@vm2:~$ 

@@ -144,3 +144,38 @@ argocd cluster list
 
 # reset KUBECONFIG back to VM1
 export KUBECONFIG=$HOME/.kube/config
+
+
+
+
+
+
+
+
+
+
+
+
+Step 1 — Reset kubeadm:
+bashsudo kubeadm reset -f
+
+Step 2 — Clean up leftover files:
+
+sudo rm -rf /etc/cni/net.d
+sudo rm -rf $HOME/.kube
+sudo rm -rf /var/lib/etcd
+sudo rm -rf /var/lib/kubelet
+
+Step 3 — Kill any processes still holding those ports:
+
+sudo fuser -k 6443/tcp
+sudo fuser -k 10259/tcp
+sudo fuser -k 10257/tcp
+
+Step 4 — Restart kubelet and containerd:
+
+sudo systemctl restart containerd
+sudo systemctl restart kubelet
+
+Step 5 — Wait 10 seconds, then init again:
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16

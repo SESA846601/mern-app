@@ -1,0 +1,105 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  backend-ci:
+    name: Backend Tests + Coverage + Security
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1 - Get the code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2 - Setup Node
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    # Step 3 - Install dependencies
+    - name: Install backend dependencies
+      run: |
+        cd backend
+        npm install
+
+    # Step 4 - GATEKEEPER 1: Run tests
+    - name: Run backend tests
+      run: |
+        cd backend
+        npm test
+
+    # Step 5 - GATEKEEPER 2: Code coverage
+    - name: Check code coverage
+      run: |
+        cd backend
+        npm run coverage
+
+    # Step 6 - Build Docker image
+    - name: Build backend Docker image
+      run: |
+        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest ./backend
+
+    # Step 7 - GATEKEEPER 3: Security scan
+    - name: Trivy security scan on backend
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
+        format: table
+        exit-code: '1'
+        severity: CRITICAL
+
+    # Step 8 - Push backend image
+    - name: Push backend to DockerHub
+      run: |
+        echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
+
+  frontend-ci:
+    name: Frontend Build + Security
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install frontend dependencies
+      run: |
+        cd frontend
+        npm install
+
+    # GATEKEEPER 1: Frontend tests
+    - name: Run frontend tests
+      run: |
+        cd frontend
+        npm test -- --watchAll=false
+
+    # Build Docker image
+    - name: Build frontend Docker image
+      run: |
+        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest ./frontend
+
+    # GATEKEEPER 2: Security scan
+    - name: Trivy security scan on frontend
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
+        format: table
+        exit-code: '1'
+        severity: CRITICAL
+
+    # Push frontend image
+    - name: Push frontend to DockerHub
+      run: |
+        echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest

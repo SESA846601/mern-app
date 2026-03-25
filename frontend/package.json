@@ -17,8 +17,5 @@
     "@testing-library/react": "^16.3.2",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0"
-  },
-  "jest": {
-    "testEnvironment": "jsdom"
   }
 }

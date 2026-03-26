@@ -493,7 +493,7 @@ https://192.168.78.130:6443    workload-cluster
 
 
 
-
+VM1
 
 
 
@@ -1195,5 +1195,812 @@ https://192.168.78.130:6443    workload-cluster
 
 
 
+VM2
 
+sesa846601@vm2:~$ history
+    1  sudo dhclient
+    2  ping google.com
+    3  sudo apt update
+    4  ping 8.8.8.8
+    5  ip route
+    6  ping google.com
+    7  ip route
+    8  sudo apt update
+    9  sudo apt install fontconfig openjdk-21-jre
+   10  java -version
+   11  sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc   https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
+   12  echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]"   https://pkg.jenkins.io/debian-stable binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
+   13  sudo apt update
+   14  sudo apt install jenkins
+   15  jenkins
+   16  sudo systemctl status jenkins
+   17  sudo service jenkins status
+   18  cd desktop
+   19  ls
+   20  cd desktop
+   21  cd Desktop
+   22  mkdir jenkins-devops-project
+   23  cd jenkins-devops-project/
+   24  sudo apt update
+   25  git clone https://github.com/sesa846601/jenkins-devops-project.git
+   26  sudo apt install git
+   27  git clone https://github.com/sesa846601/jenkins-devops-project.git
+   28  ls
+   29  cd jenkins-devops-project/
+   30  code .
+   31  sudo systemctl start jenkins
+   32  sudo systemctl enable jenkins
+   33  sudo systemctl status jenkins
+   34  cd /var/lib/jenkins/secrets/initialAdminPassword
+   35  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+   36  sudo usermod-aG docker jenkins
+   37  sudo usermod -aG docker jenkins
+   38  sudo apt update
+   39  sudo apt install docker.io -y
+   40  sudo systemctl start docker
+   41  sudo systemctl enable docker
+   42  docker --version
+   43  sudo usermod -aG docker jenkins
+   44  sudo systemctl restart jenkins
+   45  sudo docker hello-world
+   46  sudo docker run hello-world
+   47  git pull
+   48  git push
+   49  git add .
+   50  git commit -m "updated jenkinsfile"
+   51  git config --global user.email "sesa846601@se.com"
+   52  git config --global user.name "sesa846601"
+   53  git commit -m "updated jenkinsfile"
+   54  git add .
+   55  git commit -m "updated jenkinsfile"
+   56  git push
+   57  git add .
+   58  git commit -m "updated"
+   59  git status
+   60  git add .
+   61  git commit -m "updated jenkinsfile"
+   62  git push origin main
+   63  pip install --upgrade pip
+   64  sudo apt install python3-pip
+   65  pip install --upgrade pip
+   66  git add .
+   67  git commit -m "renamed requirements.txt"
+   68  git push origin main
+   69  git add .
+   70  git commit -m "testing"
+   71  git push 
+   72  git push origin main
+   73  git pull
+   74  git stash
+   75  git pull origin main --rebase
+   76  git push origin main
+   77  git clone "https://github.com/sesa846601/devops-dashboard.git"
+   78  ls
+   79  cd devops-dashboard/
+   80  docker build -t devops-dashboard .
+   81  code .
+   82  docker build -t devops-dashboard .
+   83  git pull
+   84  docker build -t devops-dashboard .
+   85  sudo docker build -t devops-dashboard .
+   86  pip install --upgrade pip
+   87  sudo docker run -d -p 5000:5000 devops-dashboard
+   88  python app/app.py
+   89  python3 app/app.py
+   90  pip install -r requirements.txt
+   91  python3 -m venv venv
+   92  pip install -r requirements.txt
+   93  source venv/bin/activate
+   94  source venv/bin/activate/
+   95  python3 -m venv venv
+   96  apt install python3.12-venv
+   97  sudo apt install python3.12-venv
+   98  python3 -m venv venv
+   99  source venv/bin/activate/
+  100  source venv/bin/activate
+  101  pip install -r requirements.txt
+  102  pip install -r app/requirements.txt
+  103  python3 app/app.py
+  104  kill 5000
+  105  python3 app/app.py
+  106  ip a
+  107  source venv/bin/activate
+  108  python3 app/app.py
+  109  lsod -i :5000
+  110  lsof -i :5000
+  111  kill -9 12345
+  112  git pull
+  113  git add .
+  114  git commit -m "added git ignore"
+  115  git push 
+  116  python3 app/app.py
+  117  docker ps
+  118  sudo docker ps
+  119  docker stop 17e8e6132aa7
+  120  sudo docker stop 17e8e6132aa7
+  121  python3 app/app.py
+  122  git pull
+  123  git pull 
+  124  git add .
+  125  git push -m "updated pipeline"
+  126  git commit -m "updated pipeline"
+  127  git push
+  128  git add .
+  129  git commit -m "another one"
+  130  git push 
+  131  git pull
+  132  git add .
+  133  git push -m "updated gitignore"
+  134  git commit -m "updated gitignore"
+  135  git push
+  136  venv source/bin/activate
+  137  source venv/bin/activate
+  138  cd
+  139  ls
+  140  git clone "https://github.com/SESA846601/deployctl.git"
+  141  cd deployctl
+  142  code .
+  143  sudo apt update
+  144  sudo apt install docker-compose-plugin
+  145  sudo usermod -aG docker $USER
+  146  sudo apt install docker-compose-plugin
+  147  sudo apt update
+  148  sudo apt install docker-compose-plugin
+  149  sudo apt install docker-compose
+  150  sudo apt install docker-compose-plugin
+  151  docker-compose up -d
+  152  cd frontend
+  153  npm install
+  154  sudo apt install npm
+  155  npm run dev
+  156  ls
+  157  npm instal
+  158  npm install
+  159  npm audit
+  160  npm audit fix --force
+  161  npm run dev
+  162  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+  163  source ~/. bash
+  164  source ~/.bashrc
+  165  nvm install 20
+  166  nvm use 20
+  167  node -v
+  168  rm -rf node_modules package-lock.json
+  169  npm install
+  170  npm install --legacy-peer-deps
+  171  cd frontend
+  172  npm install --legacy-peer-deps
+  173  npm run dev
+  174  cd deployctl/docker
+  175  cd docker
+  176  docker compose up -d
+  177  docker ps
+  178  sudo docker compose up -d
+  179  flag d
+  180  docker --version
+  181  docker compose version
+  182  sudo docker compose version
+  183  sudo apt update
+  184  sudo apt install docker-compose-plugin
+  185  docker compose up -d
+  186  docker-compose up -d
+  187  sudo docker-compose up -d
+  188  docker ps
+  189  sudo docker ps
+  190  cd backedn
+  191  cd backend
+  192  python3 venv venv
+  193  sudo python3 venv venv
+  194  python venv venv
+  195  sudo python3 venv venv
+  196  python3 venv venv
+  197  python3 -m  venv venv
+  198  source venv/bin/activate
+  199  pip install -r requirements.txt
+  200  uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+  201  whoami
+  202  nano .env
+  203  uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+  204  ssh-keygen -t ed25519 -C "deployctl-jenkins" -f deployctl_key
+  205  cat deployctl_key
+  206  cat deployctl_key.pub
+  207  ss-copy-id -i ~/.ssh/deployctl_key.pub ubuntu@APP_VM_IP
+  208  sudo ssh-copy-id -i ~/.ssh/deployctl_key.pub ubuntu@APP_VM_IP
+  209  sudo ssh-copy-id -i ~/.ssh/deployctl_key.pub sesa846601@192.168.78.128
+  210  ip a 
+  211  sudo ssh-copy-id -i ~/.ssh/deployctl_key.pub sesa846601@192.168.78.128
+  212  ls
+  213  sudo ssh-copy-id -i ~/.ssh/deployctl_key.pub sesa846601@192.168.78.128
+  214  sudo ssh-copy-id -i ~/deployctl_key.pub sesa846601@192.168.78.128
+  215  sudo ssh-copy-id -i /deployctl_key.pub sesa846601@192.168.78.128
+  216  mv ~/deployctl_key ~/.ssh/deployctl_key
+  217  mv ~/deployctl_key.pub ~/.ssh/deployctl_key.pub
+  218  sudo apt update
+  219  sudo apt install openssh-server -y
+  220  sudo killall apt apt-get
+  221  sudo apt install openssh-server -y
+  222  sudo rm /var/lib/dpgk/lock-frontend
+  223  sudo rm /var/lib/dpgk/lock
+  224  sudo rm /var/lib/dpgk/lists/lock
+  225  sudo rm /var/cache/apt/archives/lock
+  226  sudo dpkg --configure -a
+  227  sudo rm /var/lib/dpgk/lock-frontend
+  228  sudo lsof /var/lib/dpkg/lock-frontend
+  229  sudo kill -9 7595
+  230  sudo apt install openssh-server -y
+  231  sudo apt clean
+  232  sudo apt autoclean
+  233  sudo apt install openssh-server -y
+  234  sudo apt install--fix-missing  openssh-server -y
+  235  sudo apt install --fix-missing  openssh-server -y
+  236  sudo apt update
+  237  sudo apt install --fix-missing  openssh-server -y
+  238  ip a
+  239  sudo systemctl restart NetworkManager
+  240  sudo nmcli netwroking on
+  241  sudo nmcli networking on
+  242  sudo nmcli radio wifi on
+  243  ip a
+  244  git clone "https://github.com/SESA846601/minideploy.git"
+  245  code .
+  246  sudo apt install ansible -y
+  247  ssh-keygen -t ed25519 -C "minideploy"
+  248  ls ~/.ssh/
+  249  git clone "https://github.com/SESA846601/docker-cleanup-bot.git"
+  250  code /
+  251  code .
+  252  cd docker-cleanup-bot/
+  253  code .
+  254  sudo apt install python3-pip python3-venv -y
+  255  python3 -m pip --version
+  256  python3 -m pip install pytest flask
+  257  python3 -m pip install pytest 
+  258  ls
+  259  cd docker-cleanup-bot/
+  260  ls
+  261  source venv/bin/activate
+  262  python3 -m pip install pytest 
+  263  ls
+  264  cd docker-cleanup-bot/
+  265  cd app
+  266  python3 -m pytest test_app.py
+  267  python3 -m pytest test_app.py -v
+  268  ls
+  269  pip3 install pytest flask
+  270  ls
+  271  cd ..
+  272  ls
+  273  source venv/bin/activate
+  274  pip3 install pytest flask
+  275  sudo pip3 install pytest flask --break-system-packages
+  276  sudo python3 -m pytest --version
+  277  sudo usermod -aG docker jenkins
+  278  sudo systemctl restart jenkins
+  279  pip install -r requirements.txt
+  280  python3 -m venv venv
+  281  source venv/bin/activate
+  282  pip install -r requirements.txt
+  283  ls
+  284  cd app
+  285  cd
+  286  cd app
+  287  ls
+  288  cd docker-cleanup-bot/
+  289  ls
+  290  cd app
+  291  cd templates
+  292  pip install -r requirements.txt
+  293  ls
+  294  cd .
+  295  ls
+  296  cd ..
+  297  ls
+  298  pip install -r requirements.txt
+  299  python3 -m pip install pytest flask
+  300  python3 -m pytest test_app.py -v --tb=short
+  301  sudo apt install pipx
+  302  pipx install -r requirements.txt
+  303  cd ..
+  304  pipx install -r requirements.txt
+  305  pipx install requirements.txt
+  306  ls
+  307  cd app
+  308  pipx install requirements.txt
+  309  ls
+  310  git add .
+  311  git commit -m "updated gitignore"
+  312  git push 
+  313  sudo systemctl restart jenkins
+  314  ngrok http 8080
+  315  ngrok http 8080
+  316  git add .
+  317  git commit -m "fixed agent"
+  318  git pull
+  319  git push
+  320  git pull
+  321  git pull
+  322  pip install -r requirements.txt
+  323  ls
+  324  source venv/bin/activate
+  325  pip install -r requirements.txt
+  326  ls
+  327  cd ..
+  328  ls
+  329  cd devops-dashboard/
+  330  cd app
+  331  ls
+  332  pip install -r requirements.txt
+  333  pip install --upgrade pip
+  334  git pull
+  335  docker logs devops-dashboard
+  336  git pull
+  337  git add .
+  338  git commit -m "final for today"
+  339  git push
+  340  ngrok http 8080
+  341  docker ps
+  342  whoami
+  343  sudo rm /etc/machine-id
+  344  sudo systemd-machine-id-setup
+  345  sudo hostnamectl set-hostname vm2
+  346  sudo nano /etc/hosts
+  347  whoami
+  348  sudo nano /etc/hosts
+  349  sudo hostnamectl set-hostname vm2
+  350  sudo nano /etc/hosts
+  351  exec bash
+  352  sudo nano /etc/hosts
+  353  whoami
+  354  ip a
+  355  ping 192.168.128
+  356  sudo reboot
+  357  ping google.com
+  358  ping 192.168.78.128
+  359  sudo kubeadm init --pod-network-cidr=10.245.0.0/16
+  360  sudo apt update
+  361  sudo apt install -y apt-transport-https ca-certificates curl
+  362  curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+  363  echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+  364  sudo apt update
+  365  sudo apt install -y kubelet kubeadm kubectl
+  366  sudo apt-mark hold kubelet kubeadm kubectl
+  367  kubeadm version
+  368  kubectl version --client
+  369  sudo swapoff -a
+  370  sudo kubeadm init --pod-network-cidr=10.245.0.0/16
+  371  sudo modprobe br_netfilter
+  372  sudo tee /etc/sysctl.d/k8s.conf <<EOF
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
 
+  373  sudo sysctl --system
+  374  ls /proc/sys/net/bridge/
+  375  sudo kubeadm init --pod-network-cidr=10.245.0.0/16
+  376  mkdir -p $HOME/.kube
+  377  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  378  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  379  kubectl get nodes
+  380  kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+  381  kubectl get pods -A
+  382  kubectl describe pod -n kube-system -l k8s-app=kube-dns
+  383  sudo apt install -y containerd
+  384  sudo systemctl enable --now containerd
+  385  sudo systemctl status containerd
+  386  sudo kubeadm reset -f
+  387  sudo rm -rf $HOME/.kube
+  388  sudo swapoff -a
+  389  sudo modprobe br_netfilter
+  390  sudo sysctl --system
+  391  ls /proc/sys/net/bridge/
+  392  # You should see bridge-nf-call-iptables, bridge-nf-call-ip6tables, etc.~ls /proc/sys/net/bridge/
+  393  #
+  394  ls /proc/sys/net/bridge/
+  395  sudo systemctl status containerd
+  396  sudo kubeadm init --pod-network-cidr=10.245.0.0/16
+  397  mkdir -p $HOME/.kube
+  398  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  399  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  400  kubectl get nodes
+  401  kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+  402  kubectl get pods -A
+  403  ip a
+  404  kubectl get nodes
+  405  kubectl get pods -n kube-system
+  406  sudo kubeadm reset -f
+  407  sudo rm -rf /etc/cni/net.d
+  408  sudo rm -rf $HOME/.kube
+  409  sudo rm -rf /var/lib/etcd
+  410  sudo rm -rf /var/lib/kubelet
+  411  sudo systemctl restart containerd
+  412  sudo systemctl restart kubelet
+  413  sudo kubeadm init --pod-network-cidr=10.245.0.0/16
+  414  mkdir -p $HOME/.kube
+  415  sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+  416  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  417  kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+  418  mkdir -p $HOME/.kube
+  419  sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+  420  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  421  kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+  422  kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+  423  kubectl get nodes
+  424  sudo systemctl status kubectl
+  425  sudo systemctl status kubeet
+  426  sudo systemctl status kublet
+  427  sudo systemctl status kubelet
+  428  sudo journalctl -u kubelet -n 550 --no-pager
+  429  free -h
+  430  sudo kubeadm reset -f
+  431  sudo rm -rf /etc/cni/net.d
+  432  sudo rm -rf $HOME/.kube
+  433  sudo rm -rf /var/lib/etcd
+  434  sudo rm -rf /var/lib/kubelet
+  435  sudo systemctl restart containerd
+  436  sudo systemctl restart kubelet
+  437  sudo kubeadm init --pod-network-cidr=10.245.0.0/16
+  438  mkdir -p $HOME/.kube
+  439  sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+  440  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  441  kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+  442  kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+  443  kubectl get nodes
+  444  cat $HOME/.kube/config
+  445  curl -k https://192.168.78.130:6443
+  446  sudo systemctl status kubelet
+  447  kubectl get nodes
+  448  sudo ufw allow 6443/tcp
+  449  sudo ufw allow 6443
+  450  sudo ufw status
+  451  kubectl get nodes
+  452  sudo ss -tlnp | grep 6443
+  453  kubectl get nodes
+  454  sudo systemctl status kublet
+  455  sudo systemctl status kubelet
+  456  free -h
+  457  sudo ss -tlnp | grep 6443
+  458  sudo crictl ps -a | grep apiserver
+  459  sudo crictl logs $(sudo crictl ps -a | grep apiserver | awk 'print $1')
+  460  sudo cat /var/log/pods/kube-system_kube-apiserver-vm2*/kube-apiserver/0.log | tail -50
+  461  sudo journalctl -u kubelet -n 100 --no-pager | grep -i "apiserver\|error\|fail"
+  462  sudo systemctl restart containerd
+  463  sudo systemctl restart kubelet
+  464  sleep 30
+  465  sudo ss -tlnp | grep 6443
+  466  sudo mkdir -p /etc/containerd
+  467  containerd config default | sudo tee /etc/containerd/config.toml
+  468  sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
+  469  sudo systemctl restart containerd
+  470  sudo systemctl restart kubelet
+  471  sleep 30
+  472  kubectl get nodes
+  473  argo cluster list
+  474  argocd cluster list
+  475  kubectl get all -n production
+  476  kubectl describe node vm2
+  477  kubectl logs backend -n production
+  478  kubectl logs production -n production
+  479  kubectl logs argo -n production
+  480  kubectl logs argocd -n production
+  481  kubectl pod argocd -n production
+  482  kubectl logs pod -n production
+  483  kubectl get pods -n production
+  484  kubectl describe pod -1 app=backend -n production
+  485  kubectl describe pod -l app=backend -n production
+  486  kubectl get pods -n production
+  487  argo cluster list
+  488  argocd cluster list
+  489  kubectl get all -n production
+  490  kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
+  491  kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+  492  kubectl get storageclass
+  493  kubectl delete pvc mango-pvc -n production
+  494  kubectl delete pvc mongo-pvc -n production
+  495  kubectl apply -f <<EOF
+apiversion: v1
+kind: PersistentVolumeClaim
+metadata:
+name: mongo-pvc
+namespace: production
+spec:
+accessModes:
+-ReadWriteonce
+storageClassName: local-path
+resources:
+requests:
+storage: 5Gi
+EOF
+
+  496  kubectl apply -f - <<EOF
+apiversion: v1
+kind: PersistentVolumeClaim
+metadata:
+name: mongo-pvc
+namespace: production
+spec:
+accessModes:
+-ReadWriteonce
+storageClassName: local-path
+resources:
+requests:
+storage: 5Gi
+EOF
+
+  497  kubectl apply -f - <<EOF
+apiversion: v1
+kind: PersistentVolumeClaim
+metadata:
+name: mongo-pvc
+namespace: production
+spec:
+accessModes:
+-ReadWriteOnce
+storageClassName: local-path
+resources:
+requests:
+storage: 5Gi
+EOF
+
+  498  kubectl apply -f - <<EOF
+apiversion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-pvc
+  namespace: production
+spec:
+  accessModes:
+  -ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 5Gi
+EOF
+
+  499  kubectl delete pods --all -n production
+  500  kubectl get storage class
+  501  kubectl get storageclass
+  502  kubectl get pods -n kube-system -l app=flannel -o wide
+  503  kubectl get pods -n production -l app=flannel -o wide
+  504  kubectl get pods -n productions -l app=flannel -o wide
+  505  kubectl logs -n kube-system -l app=flannel
+  506  kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+  507  kubectl get pods -n kube-system -o wide
+  508  kubectl describe daemonset kube-flannel-ds -n kube-flannel
+  509  sudo rm -f /etc/containerd/config.toml
+  510  containerd config default | sudo tee /etc/containerd/config.toml
+  511  sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
+  512  sudo systemctl restart containerd
+  513  sudo systemctl restart kubelet
+  514  sudo rm -rf /etc/cni/net.d/*
+  515  sudo rm -rf /var/lib/cni/*
+  516  sudo rm -rf /run/flannel/*
+  517  kubectl delete -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+  518  kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+  519  kubectl get pods -n kube-flannel -w
+  520  kubectl logs -n kube-flannel kube-flannel-ds-7bccb
+  521  curl -O https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+  522  nano kube-flannel.yml
+  523  kubectl delete -f kube-flannel.yml
+  524  kubectl apply -f kube-flannel.yml
+  525  kubectl get pods -n kube-flannel -w
+  526  kubectl get pods -n kube-system
+  527  kubectl delete pods --all -n production
+  528  kubectl get nodes
+  529  kubectl get pods -n production
+  530  kubectl get pods -A
+  531  kubectl get pods -n production
+  532  kubectl describe pod -n production mongodb-694457bf88-86zvj
+  533  sesa846601@vm2:~$ kubectl get pods -n production
+  534  NAME                        READY   STATUS              RESTARTS      AGE
+  535  backend-76bffb54-8ssjn      1/1     Running             0             2m19s
+  536  backend-76bffb54-zvk8c      1/1     Running             0             2m19s
+  537  frontend-7f9fb547d6-sqkh7   0/1     CrashLoopBackOff    1 (52s ago)   2m19s
+  538  frontend-7f9fb547d6-wwswz   0/1     CrashLoopBackOff    1 (50s ago)   2m19s
+  539  mongodb-694457bf88-86zvj    0/1     ContainerCreating   0             2m19s
+  540  sesa846601@vm2:~$ kubectl get pods -A
+  541  NAMESPACE            NAME                                      READY   STATUS              RESTARTS       AGE
+  542  kube-flannel         kube-flannel-ds-6k6gm                     1/1     Running             0              3m17s
+  543  kube-system          coredns-76f75df574-242wl                  1/1     Running             0              46h
+  544  kube-system          coredns-76f75df574-m65v9                  1/1     Running             0              46h
+  545  kube-system          etcd-vm2                                  1/1     Running             46 (45h ago)   46h
+  546  kube-system          kube-apiserver-vm2                        1/1     Running             55 (45h ago)   46h
+  547  kube-system          kube-controller-manager-vm2               1/1     Running             56 (18h ago)   46h
+  548  kube-system          kube-proxy-j9zq8                          1/1     Running             14 (45h ago)   46h
+  549  kube-system          kube-scheduler-vm2                        1/1     Running             60 (18h ago)   46h
+  550  local-path-storage   local-path-provisioner-764fd965ff-qn2sc   1/1     Running             0              19h
+  551  production           backend-76bffb54-8ssjn                    1/1     Running             0              2m34s
+  552  production           backend-76bffb54-zvk8c                    1/1     Running             0              2m34s
+  553  production           frontend-7f9fb547d6-sqkh7                 0/1     CrashLoopBackOff    1 (67s ago)    2m34s
+  554  production           frontend-7f9fb547d6-wwswz                 0/1     CrashLoopBackOff    1 (65s ago)    2m34s
+  555  production           mongodb-694457bf88-86zvj                  0/1     ContainerCreating   0              2m34s
+  556  sesa846601@vm2:~$ kubectl get pods -n production
+  557  NAME                        READY   STATUS             RESTARTS      AGE
+  558  backend-76bffb54-8ssjn      1/1     Running            0             5m4s
+  559  backend-76bffb54-zvk8c      1/1     Running            0             5m4s
+  560  frontend-7f9fb547d6-sqkh7   0/1     CrashLoopBackOff   4 (20s ago)   5m4s
+  561  frontend-7f9fb547d6-wwswz   0/1     CrashLoopBackOff   4 (22s ago)   5m4s
+  562  mongodb-694457bf88-86zvj    1/1     Running            0             5m4s
+  563  sesa846601@vm2:~$ kubectl describe pod -n production mongodb-694457bf88-86zvj
+  564  Name:             mongodb-694457bf88-86zvj
+  565  Namespace:        production
+  566  Priority:         0
+  567  Service Account:  default
+  568  Node:             vm2/192.168.78.130
+  569  Start Time:       Thu, 26 Mar 2026 10:31:31 +0530
+  570  Labels:           app=mongodb
+  571  Annotations:      <none>
+  572  Status:           Running
+  573  IP:               10.245.0.14
+  574  IPs:
+  575  Controlled By:  ReplicaSet/mongodb-694457bf88
+  576  Containers:
+  577  Conditions:
+  578  Volumes:
+  579  QoS Class:                   BestEffort
+  580  Node-Selectors:              <none>
+  581  Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+  582  Events:
+  583  sesa846601@vm2:~$ 
+  584  [200~sesa846601@vm2:~$ kubectl get pods -n production
+  585  NAME                        READY   STATUS              RESTARTS      AGE
+  586  backend-76bffb54-8ssjn      1/1     Running             0             2m19s
+  587  backend-76bffb54-zvk8c      1/1     Running             0             2m19s
+  588  frontend-7f9fb547d6-sqkh7   0/1     CrashLoopBackOff    1 (52s ago)   2m19s
+  589  frontend-7f9fb547d6-wwswz   0/1     CrashLoopBackOff    1 (50s ago)   2m19s
+  590  mongodb-694457bf88-86zvj    0/1     ContainerCreating   0             2m19s
+  591  sesa846601@vm2:~$ kubectl get pods -A
+  592  NAMESPACE            NAME                                      READY   STATUS              RESTARTS       AGE
+  593  kube-flannel         kube-flannel-ds-6k6gm                     1/1     Running             0              3m17s
+  594  kube-system          coredns-76f75df574-242wl                  1/1     Running             0              46h
+  595  kube-system          coredns-76f75df574-m65v9                  1/1     Running             0              46h
+  596  kube-system          etcd-vm2                                  1/1     Running             46 (45h ago)   46h
+  597  kube-system          kube-apiserver-vm2                        1/1     Running             55 (45h ago)   46h
+  598  kube-system          kube-controller-manager-vm2               1/1     Running             56 (18h ago)   46h
+  599  kube-system          kube-proxy-j9zq8                          1/1     Running             14 (45h ago)   46h
+  600  kube-system          kube-scheduler-vm2                        1/1     Running             60 (18h ago)   46h
+  601  local-path-storage   local-path-provisioner-764fd965ff-qn2sc   1/1     Running             0              19h
+  602  production           backend-76bffb54-8ssjn                    1/1     Running             0              2m34s
+  603  production           backend-76bffb54-zvk8c                    1/1     Running             0              2m34s
+  604  production           frontend-7f9fb547d6-sqkh7                 0/1     CrashLoopBackOff    1 (67s ago)    2m34s
+  605  production           frontend-7f9fb547d6-wwswz                 0/1     CrashLoopBackOff    1 (65s ago)    2m34s
+  606  production           mongodb-694457bf88-86zvj                  0/1     ContainerCreating   0              2m34s
+  607  sesa846601@vm2:~$ kubectl get pods -n production
+  608  NAME                        READY   STATUS             RESTARTS      AGE
+  609  backend-76bffb54-8ssjn      1/1     Running            0             5m4s
+  610  backend-76bffb54-zvk8c      1/1     Running            0             5m4s
+  611  frontend-7f9fb547d6-sqkh7   0/1     CrashLoopBackOff   4 (20s ago)   5m4s
+  612  frontend-7f9fb547d6-wwswz   0/1     CrashLoopBackOff   4 (22s ago)   5m4s
+  613  mongodb-694457bf88-86zvj    1/1     Running            0             5m4s
+  614  sesa846601@vm2:~$ kubectl describe pod -n production mongodb-694457bf88-86zvj
+  615  Name:             mongodb-694457bf88-86zvj
+  616  Namespace:        production
+  617  Priority:         0
+  618  Service Account:  default
+  619  Node:             vm2/192.168.78.130
+  620  Start Time:       Thu, 26 Mar 2026 10:31:31 +0530
+  621  Labels:           app=mongodb
+  622  Annotations:      <none>
+  623  Status:           Running
+  624  IP:               10.245.0.14
+  625  IPs:
+  626  Controlled By:  ReplicaSet/mongodb-694457bf88
+  627  Containers:
+  628  Conditions:
+  629  Volumes:
+  630  QoS Class:                   BestEffort
+  631  Node-Selectors:              <none>
+  632  Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+  633  Events:
+  634  sesa846601@vm2:~$ 
+  635  ~sesa846601@vm2:~$ kubectl get pods -n production
+  636  NAME                        READY   STATUS              RESTARTS      AGE
+  637  backend-76bffb54-8ssjn      1/1     Running             0             2m19s
+  638  backend-76bffb54-zvk8c      1/1     Running             0             2m19s
+  639  frontend-7f9fb547d6-sqkh7   0/1     CrashLoopBackOff    1 (52s ago)   2m19s
+  640  frontend-7f9fb547d6-wwswz   0/1     CrashLoopBackOff    1 (50s ago)   2m19s
+  641  mongodb-694457bf88-86zvj    0/1     ContainerCreating   0             2m19s
+  642  sesa846601@vm2:~$ kubectl get pods -A
+  643  NAMESPACE            NAME                                      READY   STATUS              RESTARTS       AGE
+  644  kube-flannel         kube-flannel-ds-6k6gm                     1/1     Running             0              3m17s
+  645  kube-system          coredns-76f75df574-242wl                  1/1     Running             0              46h
+  646  kube-system          coredns-76f75df574-m65v9                  1/1     Running             0              46h
+  647  kube-system          etcd-vm2                                  1/1     Running             46 (45h ago)   46h
+  648  kube-system          kube-apiserver-vm2                        1/1     Running             55 (45h ago)   46h
+  649  kube-system          kube-controller-manager-vm2               1/1     Running             56 (18h ago)   46h
+  650  kube-system          kube-proxy-j9zq8                          1/1     Running             14 (45h ago)   46h
+  651  kube-system          kube-scheduler-vm2                        1/1     Running             60 (18h ago)   46h
+  652  local-path-storage   local-path-provisioner-764fd965ff-qn2sc   1/1     Running             0              19h
+  653  production           backend-76bffb54-8ssjn                    1/1     Running             0              2m34s
+  654  production           backend-76bffb54-zvk8c                    1/1     Running             0              2m34s
+  655  production           frontend-7f9fb547d6-sqkh7                 0/1     CrashLoopBackOff    1 (67s ago)    2m34s
+  656  production           frontend-7f9fb547d6-wwswz                 0/1     CrashLoopBackOff    1 (65s ago)    2m34s
+  657  production           mongodb-694457bf88-86zvj                  0/1     ContainerCreating   0              2m34s
+  658  sesa846601@vm2:~$ kubectl get pods -n production
+  659  NAME                        READY   STATUS             RESTARTS      AGE
+  660  backend-76bffb54-8ssjn      1/1     Running            0             5m4s
+  661  backend-76bffb54-zvk8c      1/1     Running            0             5m4s
+  662  frontend-7f9fb547d6-sqkh7   0/1     CrashLoopBackOff   4 (20s ago)   5m4s
+  663  frontend-7f9fb547d6-wwswz   0/1     CrashLoopBackOff   4 (22s ago)   5m4s
+  664  mongodb-694457bf88-86zvj    1/1     Running            0             5m4s
+  665  sesa846601@vm2:~$ kubectl describe pod -n production mongodb-694457bf88-86zvj
+  666  Name:             mongodb-694457bf88-86zvj
+  667  Namespace:        production
+  668  Priority:         0
+  669  Service Account:  default
+  670  Node:             vm2/192.168.78.130
+  671  Start Time:       Thu, 26 Mar 2026 10:31:31 +0530
+  672  Labels:           app=mongodb
+  673  Annotations:      <none>
+  674  Status:           Running
+  675  IP:               10.245.0.14
+  676  IPs:
+  677  Controlled By:  ReplicaSet/mongodb-694457bf88
+  678  Containers:
+  679  Conditions:
+  680  Volumes:
+  681  QoS Class:                   BestEffort
+  682  Node-Selectors:              <none>
+  683  Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+  684  Events:
+  685  sesa846601@vm2:~$ 
+  686  sesa846601@vm2:~$ kubectl get pods -n production
+  687  NAME                        READY   STATUS              RESTARTS      AGE
+  688  backend-76bffb54-8ssjn      1/1     Running             0             2m19s
+  689  backend-76bffb54-zvk8c      1/1     Running             0             2m19s
+  690  frontend-7f9fb547d6-sqkh7   0/1     CrashLoopBackOff    1 (52s ago)   2m19s
+  691  frontend-7f9fb547d6-wwswz   0/1     CrashLoopBackOff    1 (50s ago)   2m19s
+  692  mongodb-694457bf88-86zvj    0/1     ContainerCreating   0             2m19s
+  693  sesa846601@vm2:~$ kubectl get pods -A
+  694  NAMESPACE            NAME                                      READY   STATUS              RESTARTS       AGE
+  695  kube-flannel         kube-flannel-ds-6k6gm                     1/1     Running             0              3m17s
+  696  kube-system          coredns-76f75df574-242wl                  1/1     Running             0              46h
+  697  kube-system          coredns-76f75df574-m65v9                  1/1     Running             0              46h
+  698  kube-system          etcd-vm2                                  1/1     Running             46 (45h ago)   46h
+  699  kube-system          kube-apiserver-vm2                        1/1     Running             55 (45h ago)   46h
+  700  kube-system          kube-controller-manager-vm2               1/1     Running             56 (18h ago)   46h
+  701  kube-system          kube-proxy-j9zq8                          1/1     Running             14 (45h ago)   46h
+  702  kube-system          kube-scheduler-vm2                        1/1     Running             60 (18h ago)   46h
+  703  local-path-storage   local-path-provisioner-764fd965ff-qn2sc   1/1     Running             0              19h
+  704  production           backend-76bffb54-8ssjn                    1/1     Running             0              2m34s
+  705  production           backend-76bffb54-zvk8c                    1/1     Running             0              2m34s
+  706  production           frontend-7f9fb547d6-sqkh7                 0/1     CrashLoopBackOff    1 (67s ago)    2m34s
+  707  production           frontend-7f9fb547d6-wwswz                 0/1     CrashLoopBackOff    1 (65s ago)    2m34s
+  708  production           mongodb-694457bf88-86zvj                  0/1     ContainerCreating   0              2m34s
+  709  sesa846601@vm2:~$ kubectl get pods -n production
+  710  NAME                        READY   STATUS             RESTARTS      AGE
+  711  backend-76bffb54-8ssjn      1/1     Running            0             5m4s
+  712  backend-76bffb54-zvk8c      1/1     Running            0             5m4s
+  713  frontend-7f9fb547d6-sqkh7   0/1     CrashLoopBackOff   4 (20s ago)   5m4s
+  714  frontend-7f9fb547d6-wwswz   0/1     CrashLoopBackOff   4 (22s ago)   5m4s
+  715  mongodb-694457bf88-86zvj    1/1     Running            0             5m4s
+  716  sesa846601@vm2:~$ kubectl describe pod -n production mongodb-694457bf88-86zvj
+  717  Name:             mongodb-694457bf88-86zvj
+  718  Namespace:        production
+  719  Priority:         0
+  720  Service Account:  default
+  721  Node:             vm2/192.168.78.130
+  722  Start Time:       Thu, 26 Mar 2026 10:31:31 +0530
+  723  Labels:           app=mongodb
+  724  Annotations:      <none>
+  725  Status:           Running
+  726  IP:               10.245.0.14
+  727  IPs:
+  728  Controlled By:  ReplicaSet/mongodb-694457bf88
+  729  Containers:
+  730  Conditions:
+  731  Volumes:
+  732  QoS Class:                   BestEffort
+  733  Node-Selectors:              <none>
+  734  Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+  735  Events:
+  736  sesa846601@vm2:~$ 
+  737  kubectl logs -n production frontend-7f9fb547d6-sqkh7
+  738  http://localhost:31000
+  739  curl http://localhost:31000
+  740  sudo ufw allow 31000/tcp
+  741  sudo ufw status
+  742  sudo ufw enable
+  743  sudo ufw allow 31000/tcp
+  744  http://192.168.78.130:31000
+  745  history

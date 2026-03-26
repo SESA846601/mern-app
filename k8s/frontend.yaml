@@ -13,12 +13,23 @@ spec:
       labels:
         app: frontend
     spec:
+      # containers:
+      # - name: frontend
+      #   image: anshulsatone/frontend:latest
+      #   imagePullPolicy: Always
+      #   ports:
+      #   - containerPort: 3000
       containers:
       - name: frontend
         image: anshulsatone/frontend:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 3000
+          - containerPort: 3000
+        command: ["serve"]
+        args: ["-s", "build", "-l", "3000"]
+        env:
+          - name: REACT_APP_API_URL
+            value: "http://backend-service:5000"  # Replace with your backend ClusterIP service
 ---
 apiVersion: v1
 kind: Service

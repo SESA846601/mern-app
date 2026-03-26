@@ -404,3 +404,796 @@ argocd cluster list
 Should show:
 SERVER                         NAME              
 https://192.168.78.130:6443    workload-cluster
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    2  ping google.com
+    3  sudo apt update
+    4  ping 8.8.8.8
+    5  ip route
+    6  ping google.com
+    7  ip route
+    8  sudo apt update
+    9  sudo apt install fontconfig openjdk-21-jre
+   10  java -version
+   11  sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc   https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
+   12  echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]"   https://pkg.jenkins.io/debian-stable binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
+   13  sudo apt update
+   14  sudo apt install jenkins
+   15  jenkins
+   16  sudo systemctl status jenkins
+   17  sudo service jenkins status
+   18  cd desktop
+   19  ls
+   20  cd desktop
+   21  cd Desktop
+   22  mkdir jenkins-devops-project
+   23  cd jenkins-devops-project/
+   24  sudo apt update
+   25  git clone https://github.com/sesa846601/jenkins-devops-project.git
+   26  sudo apt install git
+   27  git clone https://github.com/sesa846601/jenkins-devops-project.git
+   28  ls
+   29  cd jenkins-devops-project/
+   30  code .
+   31  sudo systemctl start jenkins
+   32  sudo systemctl enable jenkins
+   33  sudo systemctl status jenkins
+   34  cd /var/lib/jenkins/secrets/initialAdminPassword
+   35  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+   36  sudo usermod-aG docker jenkins
+   37  sudo usermod -aG docker jenkins
+   38  sudo apt update
+   39  sudo apt install docker.io -y
+   40  sudo systemctl start docker
+   41  sudo systemctl enable docker
+   42  docker --version
+   43  sudo usermod -aG docker jenkins
+   44  sudo systemctl restart jenkins
+   45  sudo docker hello-world
+   46  sudo docker run hello-world
+   47  git pull
+   48  git push
+   49  git add .
+   50  git commit -m "updated jenkinsfile"
+   51  git config --global user.email "sesa846601@se.com"
+   52  git config --global user.name "sesa846601"
+   53  git commit -m "updated jenkinsfile"
+   54  git add .
+   55  git commit -m "updated jenkinsfile"
+   56  git push
+   57  git add .
+   58  git commit -m "updated"
+   59  git status
+   60  git add .
+   61  git commit -m "updated jenkinsfile"
+   62  git push origin main
+   63  pip install --upgrade pip
+   64  sudo apt install python3-pip
+   65  pip install --upgrade pip
+   66  git add .
+   67  git commit -m "renamed requirements.txt"
+   68  git push origin main
+   69  git add .
+   70  git commit -m "testing"
+   71  git push 
+   72  git push origin main
+   73  git pull
+   74  git stash
+   75  git pull origin main --rebase
+   76  git push origin main
+   77  git clone "https://github.com/sesa846601/devops-dashboard.git"
+   78  ls
+   79  cd devops-dashboard/
+   80  docker build -t devops-dashboard .
+   81  code .
+   82  docker build -t devops-dashboard .
+   83  git pull
+   84  docker build -t devops-dashboard .
+   85  sudo docker build -t devops-dashboard .
+   86  pip install --upgrade pip
+   87  sudo docker run -d -p 5000:5000 devops-dashboard
+   88  python app/app.py
+   89  python3 app/app.py
+   90  pip install -r requirements.txt
+   91  python3 -m venv venv
+   92  pip install -r requirements.txt
+   93  source venv/bin/activate
+   94  source venv/bin/activate/
+   95  python3 -m venv venv
+   96  apt install python3.12-venv
+   97  sudo apt install python3.12-venv
+   98  python3 -m venv venv
+   99  source venv/bin/activate/
+  100  source venv/bin/activate
+  101  pip install -r requirements.txt
+  102  pip install -r app/requirements.txt
+  103  python3 app/app.py
+  104  kill 5000
+  105  python3 app/app.py
+  106  ip a
+  107  source venv/bin/activate
+  108  python3 app/app.py
+  109  lsod -i :5000
+  110  lsof -i :5000
+  111  kill -9 12345
+  112  git pull
+  113  git add .
+  114  git commit -m "added git ignore"
+  115  git push 
+  116  python3 app/app.py
+  117  docker ps
+  118  sudo docker ps
+  119  docker stop 17e8e6132aa7
+  120  sudo docker stop 17e8e6132aa7
+  121  python3 app/app.py
+  122  git pull
+  123  git pull 
+  124  git add .
+  125  git push -m "updated pipeline"
+  126  git commit -m "updated pipeline"
+  127  git push
+  128  git add .
+  129  git commit -m "another one"
+  130  git push 
+  131  git pull
+  132  git add .
+  133  git push -m "updated gitignore"
+  134  git commit -m "updated gitignore"
+  135  git push
+  136  venv source/bin/activate
+  137  source venv/bin/activate
+  138  cd
+  139  ls
+  140  git clone "https://github.com/SESA846601/deployctl.git"
+  141  cd deployctl
+  142  code .
+  143  sudo apt update
+  144  sudo apt install docker-compose-plugin
+  145  sudo usermod -aG docker $USER
+  146  sudo apt install docker-compose-plugin
+  147  sudo apt update
+  148  sudo apt install docker-compose-plugin
+  149  sudo apt install docker-compose
+  150  sudo apt install docker-compose-plugin
+  151  docker-compose up -d
+  152  cd frontend
+  153  npm install
+  154  sudo apt install npm
+  155  npm run dev
+  156  ls
+  157  npm instal
+  158  npm install
+  159  npm audit
+  160  npm audit fix --force
+  161  npm run dev
+  162  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+  163  source ~/. bash
+  164  source ~/.bashrc
+  165  nvm install 20
+  166  nvm use 20
+  167  node -v
+  168  rm -rf node_modules package-lock.json
+  169  npm install
+  170  npm install --legacy-peer-deps
+  171  cd frontend
+  172  npm install --legacy-peer-deps
+  173  npm run dev
+  174  cd deployctl/docker
+  175  cd docker
+  176  docker compose up -d
+  177  docker ps
+  178  sudo docker compose up -d
+  179  flag d
+  180  docker --version
+  181  docker compose version
+  182  sudo docker compose version
+  183  sudo apt update
+  184  sudo apt install docker-compose-plugin
+  185  docker compose up -d
+  186  docker-compose up -d
+  187  sudo docker-compose up -d
+  188  docker ps
+  189  sudo docker ps
+  190  cd backedn
+  191  cd backend
+  192  python3 venv venv
+  193  sudo python3 venv venv
+  194  python venv venv
+  195  sudo python3 venv venv
+  196  python3 venv venv
+  197  python3 -m  venv venv
+  198  source venv/bin/activate
+  199  pip install -r requirements.txt
+  200  uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+  201  whoami
+  202  nano .env
+  203  uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+  204  ssh-keygen -t ed25519 -C "deployctl-jenkins" -f deployctl_key
+  205  cat deployctl_key
+  206  cat deployctl_key.pub
+  207  ss-copy-id -i ~/.ssh/deployctl_key.pub ubuntu@APP_VM_IP
+  208  sudo ssh-copy-id -i ~/.ssh/deployctl_key.pub ubuntu@APP_VM_IP
+  209  sudo ssh-copy-id -i ~/.ssh/deployctl_key.pub sesa846601@192.168.78.128
+  210  ip a 
+  211  sudo ssh-copy-id -i ~/.ssh/deployctl_key.pub sesa846601@192.168.78.128
+  212  ls
+  213  sudo ssh-copy-id -i ~/.ssh/deployctl_key.pub sesa846601@192.168.78.128
+  214  sudo ssh-copy-id -i ~/deployctl_key.pub sesa846601@192.168.78.128
+  215  sudo ssh-copy-id -i /deployctl_key.pub sesa846601@192.168.78.128
+  216  mv ~/deployctl_key ~/.ssh/deployctl_key
+  217  mv ~/deployctl_key.pub ~/.ssh/deployctl_key.pub
+  218  sudo apt update
+  219  sudo apt install openssh-server -y
+  220  sudo killall apt apt-get
+  221  sudo apt install openssh-server -y
+  222  sudo rm /var/lib/dpgk/lock-frontend
+  223  sudo rm /var/lib/dpgk/lock
+  224  sudo rm /var/lib/dpgk/lists/lock
+  225  sudo rm /var/cache/apt/archives/lock
+  226  sudo dpkg --configure -a
+  227  sudo rm /var/lib/dpgk/lock-frontend
+  228  sudo lsof /var/lib/dpkg/lock-frontend
+  229  sudo kill -9 7595
+  230  sudo apt install openssh-server -y
+  231  sudo apt clean
+  232  sudo apt autoclean
+  233  sudo apt install openssh-server -y
+  234  sudo apt install--fix-missing  openssh-server -y
+  235  sudo apt install --fix-missing  openssh-server -y
+  236  sudo apt update
+  237  sudo apt install --fix-missing  openssh-server -y
+  238  ip a
+  239  sudo systemctl restart NetworkManager
+  240  sudo nmcli netwroking on
+  241  sudo nmcli networking on
+  242  sudo nmcli radio wifi on
+  243  ip a
+  244  git clone "https://github.com/SESA846601/minideploy.git"
+  245  code .
+  246  sudo apt install ansible -y
+  247  ssh-keygen -t ed25519 -C "minideploy"
+  248  ls ~/.ssh/
+  249  git clone "https://github.com/SESA846601/docker-cleanup-bot.git"
+  250  code /
+  251  code .
+  252  cd docker-cleanup-bot/
+  253  code .
+  254  sudo apt install python3-pip python3-venv -y
+  255  python3 -m pip --version
+  256  python3 -m pip install pytest flask
+  257  python3 -m pip install pytest 
+  258  ls
+  259  cd docker-cleanup-bot/
+  260  ls
+  261  source venv/bin/activate
+  262  python3 -m pip install pytest 
+  263  ls
+  264  cd docker-cleanup-bot/
+  265  cd app
+  266  python3 -m pytest test_app.py
+  267  python3 -m pytest test_app.py -v
+  268  ls
+  269  pip3 install pytest flask
+  270  ls
+  271  cd ..
+  272  ls
+  273  source venv/bin/activate
+  274  pip3 install pytest flask
+  275  sudo pip3 install pytest flask --break-system-packages
+  276  sudo python3 -m pytest --version
+  277  sudo usermod -aG docker jenkins
+  278  sudo systemctl restart jenkins
+  279  pip install -r requirements.txt
+  280  python3 -m venv venv
+  281  source venv/bin/activate
+  282  pip install -r requirements.txt
+  283  ls
+  284  cd app
+  285  cd
+  286  cd app
+  287  ls
+  288  cd docker-cleanup-bot/
+  289  ls
+  290  cd app
+  291  cd templates
+  292  pip install -r requirements.txt
+  293  ls
+  294  cd .
+  295  ls
+  296  cd ..
+  297  ls
+  298  pip install -r requirements.txt
+  299  python3 -m pip install pytest flask
+  300  python3 -m pytest test_app.py -v --tb=short
+  301  sudo apt install pipx
+  302  pipx install -r requirements.txt
+  303  cd ..
+  304  pipx install -r requirements.txt
+  305  pipx install requirements.txt
+  306  ls
+  307  cd app
+  308  pipx install requirements.txt
+  309  ls
+  310  git add .
+  311  git commit -m "updated gitignore"
+  312  git push 
+  313  sudo systemctl restart jenkins
+  314  ngrok http 8080
+  315  ngrok http 8080
+  316  git add .
+  317  git commit -m "fixed agent"
+  318  git pull
+  319  git push
+  320  git pull
+  321  git pull
+  322  pip install -r requirements.txt
+  323  ls
+  324  source venv/bin/activate
+  325  pip install -r requirements.txt
+  326  ls
+  327  cd ..
+  328  ls
+  329  cd devops-dashboard/
+  330  cd app
+  331  ls
+  332  pip install -r requirements.txt
+  333  pip install --upgrade pip
+  334  git pull
+  335  docker logs devops-dashboard
+  336  git pull
+  337  git add .
+  338  git commit -m "final for today"
+  339  git push
+  340  ngrok http 8080
+  341  docker ps
+  342  ping 192.168.130
+  343  ip a
+  344  ping 192.168.78.130
+  345  ls
+  346  git clone "https://github.com/SESA846601/mern-app.git"
+  347  cd mern-app/
+  348  code .
+  349  git pull
+  350  sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+  351  mkdir -p $HOME/.kube
+  352  sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+  353  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  354  kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+  355  kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+  356  sudo kubeadm reset -f
+  357  sudo rm -rf /etc/kubernetes/
+  358  sudo rm -rf ~/.kube
+  359  sudo rm -rf /var/lib/etcd
+  360  sudo systemctl restart containerd
+  361  sudo systemctl restart kubelet
+  362  sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+  363  mkdir -p $HOME/.kube
+  364  sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+  365  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  366  kubectl get nodes
+  367  kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+  368  kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+  369  kubectl create namespace argocd
+  370  kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+  371  kubectl get pods -n argocd -w
+  372  kubectl patch svc argocd-server -n argocd   -p '{"spec": {"type": "NodePort"}}'
+  373  kubectl get svc argocd-server -n argocd
+  374  ~kubectl get svc argocd-server -n argocd
+  375  kubectl get svc argocd-server -n argocd
+  376  kubectl get secret argocd-initial-admin-secret   -n argocd   -o jsonpath="{.data.password}" | base64 -d
+  377  curl -sSL -o argocd-linux-amd64   https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+  378  sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+  379  curl -sSL -o argocd-linux-amd64   https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+  380  curl -sSL -o argocd-linux-amd64   https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+  381  sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+  382  ping google.com
+  383  sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+  384  curl -sSL -o argocd-linux-amd64   https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+  385  ping google.com
+  386  curl -sSL -o argocd-linux-amd64   https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+  387  ping google.com
+  388  argocd login localhost:31000   --username admin   --password 0zxla5-cc88UjrhH   --insecure
+  389  kubectl apply -n argocd   --server-side   -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+  390  kubectl get pods -n argocd
+  391  sudo rm -f /usr/local/bin/argocd
+  392  rm -f argocd-linux-amd64
+  393  wget https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+  394  chmod +x argocd-linux-amd64
+  395  sudo mv argocd-linux-amd64 /usr/local/bin/argocd
+  396  argocd version
+  397  argocd login localhost:31000   --username admin   --password 0zxla5-cc88UjrhH   --insecure
+  398  argocd login localhost:32199   --username admin   --password 0zxla5-cc88UjrhH   --insecure
+  399  kubectl logs argocd-repo-server-597d455578-szcg8 -n argocd
+  400  kubectl logs argocd-applicationset-controller-56d846b758-wq525 -n argocd
+  401  kubectl describe pod argocd-repo-server-597d455578-szcg8 -n argocd
+  402  kubectl describe pod argocd-applicationset-controller-56d846b758-wq525 -n argocd
+  403  sudo nano /etc/resolv.conf
+  404  sudo systemctl restart systemd-resolved
+  405  kubectl get pods -n argocd
+  406  nano vm2-kubeconfig.yaml
+  407  export KUBECONFIG=./vm2-kubeconfig.yaml
+  408  kubectl get nodes
+  409  export KUBECONFIG=./vm2-kubeconfig.yaml
+  410  kubectl get nodes
+  411  nano vm2-kubeconfig.yaml
+  412  export KUBECONFIG=./vm2-kubeconfig.yaml
+  413  kubectl get nodes
+  414  nano vm2-kubeconfig.yaml
+  415  kubectl apply -f k8s/argocd-app.yaml
+  416  kubectl get nodes
+  417  free -h
+  418  sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+  419  sudo systemctl status containerd
+  420  sudo systemctl status kubelet
+  421  sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+  422  sudo kubeadm reset -f
+  423  bashsudo kubeadm reset -f
+  424  sudo kubeadm reset -f
+  425  sudo rm -rf /etc/cni/net.d
+  426  sudo rm -rf $HOME/.kube
+  427  sudo rm -rf /var/lib/etcd
+  428  sudo rm -rf /var/lib/kubelet
+  429  sudo fuser -k 6443/tcp
+  430  sudo fuser -k 10259/tcp
+  431  sudo fuser -k 10257/tcp
+  432  sudo systemctl restart containerd
+  433  sudo systemctl restart kubelet
+  434  sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+  435  kubectl version
+  436  kubectl --version
+  437  kubectl -version
+  438  kubectl -v
+  439  kubectl get nodes
+  440  unset KUBECONFIG
+  441  mkdir -p $HOME/.kube
+  442  sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+  443  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  444  kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+  445  kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+  446  kubectl get nodes
+  447  kubectl get pods -n argocd
+  448  kubectl get svc argocd-server -n -argocd
+  449  kubectl create namespace argocd
+  450  kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+  451  kubectl get pods -n argocd -w
+  452  kubectl patch svc argocd-server -n argocd   -p '{"spec": {"type": "NodePort"}}'
+  453  kubectl patch svc argocd-server -n argocd \ -p '{"spec": {"type": "NodePort"}}'
+  454  kubectl get svc argocd-server -n argocd
+  455  kubectl get secret argocd-initial-admin-secret   -n argocd   -o jsonpath="{.data.password}" | base64 -d
+  456  ssh sesa846601@192.168.78.130 "cat ~/.kube/config"
+  457  ssh sesa846601@192.168.78.13
+  458  ssh sesa846601@192.168.78.130
+  459  nano ~/vm2-kubeconfig.yaml
+  460  cat ~/vm2-kubeconfig.yaml
+  461  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get nodes
+  462  nano ~/vm2-kubeconfig.yaml
+  463  cat ~/vm2-kubeconfig.yaml
+  464  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get nodes
+  465  ping 192.168.78.130
+  466  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get nodes
+  467  kubectl get svc argocd-server -n argocd
+  468  argocd login 192.168.78.128:31217   --username admin   --password ooQufrZ3H6OiT-hm   --insecure
+  469  KUBECONFIG=~/vm2-kubeconfig.yaml argocd cluster add kubernetes-admin@kubernetes \
+  470  argocd cluster list
+  471  docker
+  472  kubectl get pods -n production
+  473  kubectl apply -f ~/mern-app/argocd/argo-app.yaml 
+  474  argocd app sync mern-app
+  475  argo app sync mern-app
+  476  argocd app sync mern-app
+  477  history
+  478  argocd login 192.168.78.128:31217   --username admin   --password ooQufrZ3H6OiT-hm   --insecure
+  479  argocd app sync mern-app
+  480  argocd app list
+  481  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get nodes
+  482  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get nodes -production
+  483  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get nodes -n production
+  484  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get pods -n production
+  485  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl describe pod -n production mongodb-694457bf88-lzlbq
+  486  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl describe pod -n production mongodb-694457bf88-lzlbq | tail -20
+  487  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get pvc -n production
+  488  argocd app sync mern-app
+  489  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get pods -n production
+  490  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl describe pod -n production mongodb-694457bf88-lzlbq
+  491  kubectl get -pvc producction
+  492  kubectl get pvc -n producction
+  493  kubectl get pvc -n production
+  494  kubectl get pvc -n prod
+  495  kubectl get pvc -n production
+  496  kubectl apply -f mongodb.yaml
+  497  kubectl apply -f ~mern-app/k8s/mongodb.yaml
+  498  kubectl apply -f ~/mern-app/k8s/mongodb.yaml
+  499  kubectl get pvc -n argocd
+  500  kubectl get pvc -n argo
+  501  kubectl get -n argo
+  502  kubectl get ns
+  503  kubectl create namespace production
+  504  kubectl apply -f ~/mern-app/k8s/
+  505  kubectl get pods -n production
+  506  kubectl get pvc -n production
+  507  kubectl describe pvc mongo-pvc -n production
+  508  kubectl get pvc -n production
+  509  kubectl get pods -n local-path-storage
+  510  kubectl delete pods --all -n production
+  511  kubectl delete pvc --all -n production
+  512  kubectl apply -f ~/mern-app/k8s/
+  513  kubectl get storageclass
+  514  kubectl get pods -n localpath-storage
+  515  kubectl get pvc -n production
+  516  kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
+  517  kubectl get storageclass
+  518  kubectl get pods -n local-path-storage
+  519  kubectl delete pods --all -n production
+  520  kubectl delete pvc --all -n production
+  521  kubectl apply -f ~/mern-app/k8s/
+  522  kubectl get nodes
+  523  kubectl get storageclass
+  524  kubectl get pods -n production
+  525  kubectl edit storageclass local-path
+  526  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get pods -n production
+  527  argocd app sync mern-app
+  528  kubectl delete pods --all -n production
+  529  kubectl get pods -n production -w
+  530  argocd app sync mern-app
+  531  kubectl delete pods --all -n production
+  532  kubectl get pods -n production -w
+  533  kubectl get storageclass
+  534  kubectl delete pvc mongo-pvc -n production
+  535  kubectl apply -f mongodb.yaml
+  536  kubectl delete pvc mongo-pvc -n production
+  537  kubectl apply -f mongo-deployment.yaml
+  538  kubectl apply -f mongodb.yaml
+  539  kubectl apply -f mongodb.yml
+  540  kubectl apply -f ~/mern-app/k8s/mongodb.yml
+  541  kubectl apply -f ~/mern-app/k8s/mongodb.yaml
+  542  kubectl get pvc -n production
+  543  kubectl get pods -n production -w
+  544  kubectl logs -n production frontend-7f9fb547d6-b6pxd
+  545  kubectl get pods -n production -w
+  546  kubectl apply -f frontend-deployment.yaml
+  547  kubectl apply -f ~/mern-app/k8s/frontend.yaml
+  548  kubectl delete pods -n production --selector=app=frontend
+  549  kubectl get pods -n production -w
+  550  kubectl logs -n production frontend-7f9fb547d6-ww4mc
+  551  docker build -t anshulsatone/frontend:latest .
+  552  kubectl rollout restart deployment/frontend -n production
+  553  kubectl get pods -n production -w
+  554  kubectl describe pod -n production frontend-d6d6977bb-qd2z8
+  555  kubectl apply -f ~/mern-app/k8s/frontend.yaml
+  556  kubectl rollout restart deployment/frontend -n production
+  557  kubectl get pods -n production -w
+  558  kubectl describe pod -n production frontend-679454cc68-txzqc
+  559  kubectl apply -f ~/mern-app/k8s/frontend.yaml
+  560  kubectl rollout restart deployment/frontend -n production
+  561  kubectl get pods -n production
+  562  kubectl describe pod -n production frontend-6fd685c4fb-cpv7f
+  563  kubectl get pods -n production
+  564  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get pods -n production
+  565  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get nodes -o wide
+  566  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get svc -n production
+  567  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl apply -f ~/mern-app/k8s/frontend.yaml
+  568  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl rollout restart deployment/frontend -n production
+  569  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get pods -n production -w
+  570  # Test from inside the cluster first
+  571  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl run test --image=curlimages/curl -it --rm --restart=Never -- curl http://frontend-svc.production.svc.cluster.local:80
+  572  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get svc -n production frontend-svc
+  573  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl delete svc frontend-svc -n production
+  574  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl apply -f ~/mern-app/k8s/frontend.yaml
+  575  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get svc -n production frontend-svc
+  576  cat ~/mern-app/k8s/frontend.yaml
+  577  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl delete svc frontend-svc -n production
+  578  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl apply -f ~/mern-app/k8s/frontend.yaml
+  579  cat ~/mern-app/k8s/frontend.yaml
+  580  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get svc -n production frontend-svc
+  581  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get pods -n production
+  582  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl get svc -n production
+  583  KUBECONFIG=~/vm2-kubeconfig.yaml kubectl run test --image=curlimages/curl -it --rm --restart=Never -- curl http://frontend-svc.production.svc.cluster.local:80
+  584  ssh sesa846601@192.168.78.130
+  585  curl http://localhost:31000
+  586  kubectl delete namespace production
+  587  kubectl get pods -n production
+  588  kubectl delete namespace production
+  589  kubectl get pods -A
+  590  kubectl rollout restart deployment/argocd-applicationset-controller -n argocd
+  591  kubectl get pods -n argocd -w
+  592  kubectl rollout restart deployment/argocd-repo-server-597d455578-5wg6v -n argocd
+  593  kubectl get pods -n argocd -w
+  594  kubectl describe pod -n argocd argocd-repo-server-597d455578-5wg6v | tail -20
+  595  kubectl rollout restart deployment/argocd-repo-server -n argocd
+  596  kubectl get pods -n argocd -w
+  597  argocd app list
+  598  argo app list
+  599  argocd app list
+  600  argocd login 192.168.78.128:31217 --username admin --password $(kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath='{.data.password}' | base64 -d)
+  601  argocd app list
+  602  argocd app sync mern-app
+  603  history
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
